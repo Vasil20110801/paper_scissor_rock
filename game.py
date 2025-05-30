@@ -135,7 +135,7 @@ button8.place(x=100, y=300)
 button4 = tk.Button(root,text="Exit", command=lambda:exit1("tab"),font=("Arial",29),fg="red")
 button4.place(x=100, y=400)
 
-label = tk.Label(root,text="Нека започваме",font=("Arial",29))
+label = tk.Label(root,text="Нека започваме",font=("Arial",32))
 label.place(x=400, y=100)
 
 
