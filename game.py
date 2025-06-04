@@ -86,7 +86,7 @@ def lizard(lizard):
     elif lizard == "lizard" and random1 == "rock":
         label.config(text="Загуби !!!")
         lose  += 1
-    elif rock == "lizard" and random1 == "scissors":
+    elif lizard == "lizard" and random1 == "scissors":
         label.config(text="Загуби !!! ")
         lose += 1
     elif lizard == "lizard" and random1 == "spok":
@@ -117,7 +117,6 @@ def exit1(tab):
         exit()
     else:
         label.config(text="ERROR")
-
 button1 = tk.Button(root,text = "Paper", command=lambda:paper("paper"),font=("Arial",29),fg="orange")
 button1.place(x=100,y=100)
 
@@ -132,33 +131,47 @@ button7.place(x=100, y=250)
 
 button8 = tk.Button(root,text="Спок",command=lambda:spok("spok"),font=("Arial",29),fg="blue")
 button8.place(x=100, y=300)
-button4 = tk.Button(root,text="Exit", command=lambda:exit1("tab"),font=("Arial",29),fg="red")
-button4.place(x=100, y=400)
 
-label = tk.Label(root,text="Нека започваме",font=("Arial",32))
+button4 = tk.Button(root,text="Exit", command=lambda:exit1("tab"),font=("Arial",34),fg="red")
+button4.place(x=100, y=500)
+
+label = tk.Label(root,text="Нека започнем",font=("Arial",32),fg="green",bg="yellow")
 label.place(x=400, y=100)
 
 
 def restart11():
     global random1
     random1 = random.choice(lst)
-    label.config(text="Нека започваме")
+    label.config(text="Нека започнем",bg="yellow",fg="green")
 
 run = False
+def exist():
+    global run,label3
+    if run :
+        label3.place_forget()
+        run = False
+    else:
+        label3 = tk.Label(root, text=f"Компютъра избра :{random1}",bg="yellow",fg="blue" ,font=("Arial", 29))
+        label3.place(x=250,y=450)
+        run = True
+
 def stat():
     global run,label2
     if run :
         label2.place_forget()
         run = False
     else:
-        label2 = tk.Label(root, text=f"win = {win}, lose = {lose}, equality = {equality}",bg="green" ,font=("Arial", 29))
+        label2 = tk.Label(root, text=f"win = {win}, lose = {lose}, equality = {equality}",bg="green" ,font=("Arial", 29),fg="orange")
         label2.place(x=100,y=450)
         run = True
 
-button5 = tk.Button(root,text="Restart", command=restart11,font=("Arial",29),fg="pink")
+button5 = tk.Button(root,text="Restart", command=restart11,font=("Arial",29),fg="orange")
 button5.place(x=400, y=250)
 
 button6 = tk.Button(root,text="Stat",command=stat,font=("Arial",29),fg="orange")
 button6.place(x=100, y=350)
+
+button8 = tk.Button(root,text="Покажи_избора_на_компютъра",command=exist,font=("Arial",23),fg="red")
+button8.place(x=400, y=300)
 
 root.mainloop()
