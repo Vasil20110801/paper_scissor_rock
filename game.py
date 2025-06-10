@@ -129,8 +129,8 @@ button3.place(x=100, y=200)
 button7 = tk.Button(root,text="Гущер",command=lambda:lizard("lizard"),font=("Arial",29),fg="red")
 button7.place(x=100, y=250)
 
-button8 = tk.Button(root,text="Спок",command=lambda:spok("spok"),font=("Arial",29),fg="blue")
-button8.place(x=100, y=300)
+button9 = tk.Button(root,text="Спок",command=lambda:spok("spok"),font=("Arial",29),fg="blue")
+button9.place(x=100, y=300)
 
 button4 = tk.Button(root,text="Exit", command=lambda:exit1("tab"),font=("Arial",34),fg="red")
 button4.place(x=100, y=500)
